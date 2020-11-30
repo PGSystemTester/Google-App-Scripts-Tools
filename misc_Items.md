@@ -9,7 +9,8 @@
 
 - `[Ctrl] /`  = comment/uncomment block of code.
 - `[Alt] /` = autocomplete a variable.
-- `[Ctrl] R ` = Run current function.
+- `[Ctrl] R` = Run current function.
+- `[Ctrl] S` = Save work.
 
 ## Proper Syntax of Functions
 Example of defining custom function
