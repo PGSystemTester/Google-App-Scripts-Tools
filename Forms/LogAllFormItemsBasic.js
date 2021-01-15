@@ -11,3 +11,14 @@ function LogAllFormItemsBasic() {
   });
   Logger.log(theText);
 }
+
+//Adds ID to description of each item.
+function addIDtoFormItems(){
+  var thisForm = FormApp.getActiveForm();
+  var theText =  ''
+  thisForm.getItems().forEach(function(theItem){
+    if(theItem.getHelpText().search(theItem.getId())===-1){
+      theItem.setHelpText(theItem.getHelpText() + ' ' + theItem.getId());
+    }
+  });
+}
