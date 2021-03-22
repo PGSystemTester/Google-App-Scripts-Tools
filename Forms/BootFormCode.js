@@ -5,7 +5,7 @@
 //Constants
   const thisForm = FormApp.getActiveForm();
   //const ss = SpreadsheetApp.openById(thisForm.getDestinationId());
-  const zLatestResponse = thisForm.getResponses()[thisForm.getResponses.length-1]
+  const zLatestResponse = thisForm.getResponses()[thisForm.getResponses().length-1]
 
 
 
