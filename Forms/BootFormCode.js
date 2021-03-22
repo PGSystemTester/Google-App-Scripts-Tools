@@ -5,6 +5,7 @@
 //Constants
   const thisForm = FormApp.getActiveForm();
   //const ss = SpreadsheetApp.openById(thisForm.getDestinationId());
+  const zLatestResponse = thisForm.getResponses()[thisForm.getResponses.length-1]
 
 
 
@@ -19,9 +20,7 @@ function entryMade(e) {
  * Simulates a submission with latest entry
  */
 function testEntryMade() {
-  var allResponses = thisForm.getResponses();
-  var aResponse = allResponses[allResponses.length - 1];
-  reviewResponse_(aResponse);
+  reviewResponse_(zLatestResponse);
 }
 
 
@@ -55,6 +54,7 @@ function removeIdFromItems() {
 function addMemberIdToItems() {
   addOrRemoveID_(true);
 }
+
 
 
 /**
