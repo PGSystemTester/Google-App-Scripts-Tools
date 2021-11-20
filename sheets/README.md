@@ -1,8 +1,6 @@
 ## Narrow Scope Of Document
 ```
-/**
- * @OnlyCurrentDoc
- */
+/** @OnlyCurrentDoc*/
 ```
 
 ### On Edit Syntax
@@ -13,7 +11,6 @@ function onEdit(e) {
   range.setNote('Last modified: ' + new Date());
 }
 ```
-
 
 ### Proper Syntax of Custom Function
 ```
