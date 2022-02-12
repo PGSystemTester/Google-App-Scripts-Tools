@@ -28,6 +28,10 @@ function testEntryMade() {
  * Use this to see all properties of items in form
  */
 function LogAllFormItemsBasic(aForm) {
+  if (aForm == undefined) {
+    aForm = thisForm;
+  }
+
   var theText = ''
   thisForm.getItems().forEach(function (theItem) {
     theText = theText
@@ -35,7 +39,22 @@ function LogAllFormItemsBasic(aForm) {
       + '\n\tID:' + theItem.getId()
       + '\n\tTitle:' + theItem.getTitle()
       + '\n\tHelpText:' + theItem.getHelpText()
-      + '\n\tType:' + theItem.getType()
+      + '\n\tType:' + theItem.getType();
+    if (theItem.getType() == FormApp.ItemType.MULTIPLE_CHOICE) {
+      theText = theText + '\nAllows Other: ' + theItem.asMultipleChoiceItem().hasOtherOption().valueOf();
+
+      var theChoices = theItem.asMultipleChoiceItem().getChoices().map(aChoice => {
+        return aChoice.getValue();
+      })
+    } else if (theItem.getType() == FormApp.ItemType.CHECKBOX) {
+      theText = theText + '\nAllows Other: ' + theItem.asCheckboxItem().hasOtherOption().valueOf();
+      var theChoices = theItem.asCheckboxItem().getChoices().map(aChoice => {
+        return aChoice.getValue();
+      })
+    }
+    if (theChoices != undefined) {
+      theText = theText + '\n' + theChoices.join("|");
+    }
   });
   Logger.log(theText);
 }
@@ -76,12 +95,8 @@ function addOrRemoveID_(addingID) {
 }
 
 
-/**
- * Turns choices into text
- */
-function getTextChoices_(theItem) {
-  return theItem.getValue();
-}
+
+
 
 /**
  * Tests if anything received in a response for a certain item
