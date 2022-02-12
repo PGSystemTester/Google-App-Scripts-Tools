@@ -5,9 +5,6 @@
 //Constants
   const thisForm = FormApp.getActiveForm();
   //const ss = SpreadsheetApp.openById(thisForm.getDestinationId());
-  const zLatestResponse = thisForm.getResponses()[thisForm.getResponses().length-1]
-
-
 
 /**
  * Executed when new entry received. Must setup trigger
@@ -17,12 +14,12 @@ function entryMade(e) {
 }
 
 /**
- * Simulates a submission with latest entry
+ * Simulates entry made with latest entry
  */
 function testEntryMade() {
+  const zLatestResponse = thisForm.getResponses()[thisForm.getResponses().length-1]
   reviewResponse_(zLatestResponse);
 }
-
 
 /**
  * Use this to see all properties of items in form
@@ -93,10 +90,6 @@ function addOrRemoveID_(addingID) {
     }
   })
 }
-
-
-
-
 
 /**
  * Tests if anything received in a response for a certain item
