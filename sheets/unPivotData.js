@@ -1,3 +1,14 @@
+/** @OnlyCurrentDoc*/
+
+/**
+ * Flatten/unpivots two dimensional data set to flat file
+ *
+ * @param {range} zDataRange Data Cells
+ * @param {range} zColAxis Column Axis
+ * @param {range} zRowAxis Row Axis
+ * @return Flattened Data
+ * @customfunction
+ */
 function unpivotData(zDataRange, zColAxis, zRowAxis) {
   var theOutput = [];
   for (var i = 0; i < zDataRange.length; i++) {
