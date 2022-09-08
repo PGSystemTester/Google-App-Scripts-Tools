@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<feed version="0.3" xmlns="http://purl.org/atom/ns#">
+    <title>tes-6.5/tes:FTPJob.getList</title>
+    <category term="0" scheme="row" label=""/>
+    <category term="0" scheme="level" label=""/>
+    <category term="111111111111111111111111" scheme="securitypolicy" label=""/>
+    <category term="000000000000000000000000" scheme="customsecuritypolicy" label=""/>
+    <generator uri="http://www.software.com">TES</generator>
+    <modified>2022-08-04T15:41:11.027-06:00</modified>
+    <entry>
+        <id>9966</id>
+        <title>01 PMI SFTP</title>
+        <category term="0" scheme="row" label=""/>
+        <category term="0" scheme="level" label=""/>
+        <category term="111111111111111111111111" scheme="securitypolicy" label=""/>
+        <category term="000000000000000000000000" scheme="customsecuritypolicy" label=""/>
+        <source>com.software.FTPJobView</source>
+        <tes:ftpjob xmlns:tes="http://www.software.com">
+            <tes:asciiformat>N</tes:asciiformat>
+            <tes:ftphost>1.1.1.1:722</tes:ftphost>
+            <tes:filename>*.txt</tes:filename>
+            <tes:ftpoperation>2</tes:ftpoperation>
+            <tes:ftpprotocol>sftp</tes:ftpprotocol>
+            <tes:ftpuserid>25</tes:ftpuserid>
+            <tes:localpath>\\localpath</tes:localpath>
+            <tes:newfilename/>
+            <tes:replacefiles>N</tes:replacefiles>
+            <tes:userpasswordauthentication>Y</tes:userpasswordauthentication>
+            <tes:id>9966</tes:id><tes:typename>FTPJOB</tes:typename>
+            <tes:name>01 PMI SFTP</tes:name><tes:parentname>\location\location\location</tes:parentname>
+            <tes:active>Y</tes:active>
+            <tes:ownerid>16</tes:ownerid>
+            <tes:agentid>65</tes:agentid>
+            <tes:command>\\location</tes:command>
+            <tes:createtime>2012-08-08T11:05:27-0600</tes:createtime>
+            <tes:dependencylogic>1</tes:dependencylogic>
+            <tes:fullpath>\location\location\location</tes:fullpath>
+            <tes:lastchangetime>2019-07-19T17:27:42-0600</tes:lastchangetime>
+            <tes:runuserid>25</tes:runuserid>
+        </tes:ftpjob>
+    </entry>
+</feed>
