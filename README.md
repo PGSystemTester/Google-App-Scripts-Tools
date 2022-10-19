@@ -1,5 +1,6 @@
 # Google-App-Scripts-Tools
-Misc examples of useful GAS scripts I've writtne.
+Misc examples/notes I've compiled while using [Google App Scripts](https://developers.google.com/apps-script/reference/).
 
-Shopping submission
-https://forms.gle/CVX2Zm4LkSZ9V8Vt7
+## Quick Notes
+
+-     /** @OnlyCurrentDoc*/
