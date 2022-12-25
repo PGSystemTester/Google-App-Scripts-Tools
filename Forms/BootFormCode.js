@@ -4,7 +4,7 @@
 
 //Constants
   const thisForm = FormApp.getActiveForm();
-  //const ss = SpreadsheetApp.openById(thisForm.getDestinationId());
+  //const ss = SpreadsheetApp.openById(thisForm.getDestinationId()); //<-- scope out if not using as it adds security requirement.
 
 /**
  * Executed when new entry received. Must setup trigger
