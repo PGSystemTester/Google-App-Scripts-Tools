@@ -1,30 +1,30 @@
-/** @OnlyCurrentDoc*/
-
 /**
- * Flatten/unpivots two dimensional data set to flat file
+ * Unpivots two dimensional data set to flat data set. Useful for creating flat file from report.
  *
- * @param {range} zDataRange Data Cells
- * @param {range} zColAxis Column Axis
- * @param {range} zRowAxis Row Axis
- * @return Flattened Data
+ * @param {E7:k15} dataRange Data quadrant. Number of rows should match the number of rows in rowsAxis while number of columns should match colAxis.
+ * @param {E5:K6} colAxis Column Axis above the data range. Can include more than one row.
+ * @param {C7:D15} rowAxis Row Axis to the left of the data range. Can include more than one column.
+ * @return unpivoted data set
  * @customfunction
  */
-function unpivotData(zDataRange, zColAxis, zRowAxis) {
+function unpivotData(dataRange, colAxis, rowAxis) {
   var theOutput = [];
-  for (var i = 0; i < zDataRange.length; i++) {
-    var aRow = zDataRange[i];
+  for (var i = 0; i < dataRange.length; i++) {
+    var aRow = dataRange[i];
+    
     for (var j = 0; j < aRow.length; j++) {
-      var bRow = [];
-
-      for (var g = 0; g < zColAxis.length; g++) {
-        bRow.push(zColAxis[g][j]);
+        var bRow = [];
+        for (var g = 0; g < colAxis.length; g++){
+          //gets column members from top to bottom
+          bRow.push(colAxis[g][j]);
+        }
+        for (g = 0; g < rowAxis[i].length; g++) {
+          //gets row members from left to right
+          bRow.push(rowAxis[i][g]);
+        }
+        bRow.push(aRow[j]);
+        theOutput.push(bRow);
       }
-      for (g = 0; g < zRowAxis[i].length; g++) {
-        bRow.push(zRowAxis[i][g]);
-      }
-      bRow.push(aRow[j]);
-      theOutput.push(bRow);
-    }
   }
   return theOutput;
 }
