@@ -1,17 +1,17 @@
 /** @OnlyCurrentDoc */
-function sortSheets(){
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  sortSheetsInASpreadsheet_(ss);
+function getYourSheetInOrder(){
+  setSheetsInOrder_(SpreadsheetApp.getActiveSpreadsheet());
 }
 
-function sortSheetsInASpreadsheet_(theSpreadsheet){
-  const allSheets = theSpreadsheet.getSheets();
-  var allNames = allSheets.map(x => x.getName());
-  allNames.sort();
-
+function setSheetsInOrder_(ss){
+  const allSheets = ss.getSheets();
+  const allNames = allSheets.map(s => s.getName()).sort();
   for(var i = 0;i<allNames.length;i++){
-    var oneSheet = theSpreadsheet.getSheetByName(allNames[i]);
-    oneSheet.activate();
-    theSpreadsheet.moveActiveSheet(i+1);
+    var sIndex = i+1;
+    var aSheet = ss.getSheetByName(allNames[i]);
+    if (aSheet.getIndex()!= sIndex){
+        aSheet.activate();
+        ss.moveActiveSheet(sIndex);
+    }
  }
 }
