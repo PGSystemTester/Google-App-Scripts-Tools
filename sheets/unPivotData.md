@@ -1,3 +1,8 @@
+# Unpivot Data
+Google app scripts to unpivot two dimensional data. Not as effecient as writing a google sheets function (See below)
+
+## App Scripts Unpivot
+```js
 /**
  * Unpivots two dimensional data set to flat data set. Useful for creating flat file from report.
  *
@@ -28,3 +33,12 @@ function unpivotData(dataRange, colAxis, rowAxis) {
   }
   return theOutput;
 }
+```
+
+## Google Sheets Unpivot Formula
+
+Better ways to do this on the sheet itself such as using...
+```
+=Let(dataRng,E7:I11,rowAxis,B7:D11,colAxis,E5:I6, INDEX(SPLIT(FLATTEN(BYROW(rowAxis,LAMBDA(Σ,JOIN("‼", Σ)))&"‼"&BYCOL(colAxis, LAMBDA(Σ, JOIN("‼", Σ)))&"‼"&dataRng),"‼")))
+```
+
