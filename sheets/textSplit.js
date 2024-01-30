@@ -1,3 +1,6 @@
+//Code is essentially irrelevant with googlesheets split function (same as textsplit for Excel) 
+
+
 /*
 * @OnlyCurrentDoc
 */
