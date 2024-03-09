@@ -1,3 +1,8 @@
+# Bootstap Code For Google Forms
+
+
+
+```js
 /**
  * @OnlyCurrentDoc
  */
@@ -101,3 +106,4 @@ function testForResponse(theResponse, theQuestion) {
   }
   return false;
 }
+```
