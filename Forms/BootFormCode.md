@@ -11,6 +11,7 @@
   const thisForm = FormApp.getActiveForm();
   //const ss = SpreadsheetApp.openById(thisForm.getDestinationId()); //<-- scope out if not using as it adds security requirement.
 
+
 /**
  * Executed when new entry received. Must setup trigger
  */
@@ -22,8 +23,13 @@ function entryMade(e) {
  * Simulates entry made with latest entry
  */
 function testEntryMade() {
-  const zLatestResponse = thisForm.getResponses()[thisForm.getResponses().length-1]
+  const zLatestResponse = thisForm.getResponses()[thisForm.getResponses().length - 1]
   reviewResponse_(zLatestResponse);
+}
+
+
+function reviewResponse_() {
+  // some code
 }
 
 /**
